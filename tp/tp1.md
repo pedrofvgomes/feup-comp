@@ -24,9 +24,29 @@ S → aABe → aAbcBe → abbcBe → abbcde
 ```
       S - [e]
     / | \ 
-  [a]  A  B - [d]
-     / | \
-    A [b] [c]
-    |
-   [b]
+  [a] A  B - [d]
+    / | \
+   A [b] [c]
+   |
+  [b]
 ```
+
+### 2 - Consider the following CFG grammar over the non-terminals {X,Y,Z} and terminals {a,c,d} with the productions below and start symbol Z.
+```
+X → a
+X → Y
+Z → d
+Z → XYZ
+Y → c
+Y → ε
+```
+For this grammar compute the FIRST and FOLLOW sets of every non-terminal and the set of non-terminals
+that are nullable. Determine if the grammar can be parsed using the table-driven LL parsing algorithm.
+
+Non-terminal | FIRST | FOLLOW
+|-|-|-|
+X | {a, c, ε} | {$, d}
+Y | {c, ε} | {d}
+Z | {d, a, c, ε} | {d}
+
+```Y is the only nullable non-terminal.```
